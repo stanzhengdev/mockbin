@@ -44,7 +44,9 @@
   "scripts": {
     "test": "standard && mocha --recursive --reporter spec",
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha -- --fgrep 'Request Validation' --invert",
-    "codeclimate": "codeclimate < coverage/lcov.info"
+    "codeclimate": "codeclimate < coverage/lcov.info",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "codeclimate-test-reporter": "0.0.4",
@@ -65,16 +67,18 @@
     "express": "^4.12.3",
     "har-validator": "^1.6.1",
     "jade": "^1.9.2",
-    "marked": "^0.3.3",
+    "marked": "^0.6.2",
     "media-typer": "^0.3.0",
     "method-override": "^2.3.2",
     "moment": "^2.10.0",
     "morgan": "^1.5.2",
     "node-uuid": "^1.4.3",
-    "qs": "^2.4.1",
+    "qs": "^6.0.4",
     "redis": "^0.12.1",
     "require-directory": "^2.1.0",
     "xmlbuilder": "^4.2.1",
-    "yamljs": "^0.2.1"
-  }
+    "yamljs": "^0.2.1",
+    "snyk": "^1.163.3"
+  },
+  "snyk": true
 }
